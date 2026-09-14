@@ -1,0 +1,374 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   R N ANAND — PORTFOLIO DESIGN SYSTEM
+   Light, premium, business-first (Vistaprint-inspired): white surfaces, navy
+   authority, blue accents. Everything downstream (DOM + WebGL) reads from these
+   values so the 3D world and the interface share one palette.
+
+   LEGACY UTILITY NAMES: the original design shipped dark tokens named "ink"
+   (surfaces) and "mist" (text) with a teal "signal" accent. The whole component
+   tree is written against those names, so they are re-pointed here at the light
+   palette rather than renamed — "ink" now walks *up* to white, "mist" walks
+   *down* to navy text, and "signal" is the primary blue.
+   ========================================================================= */
+
+@theme {
+  /* ---- Surfaces (the former "ink" scale, now light) ---- */
+  --color-ink-950: #ffffff;
+  --color-ink-900: #fbfcfe;
+  --color-ink-850: #f7f9fd;
+  --color-ink-800: #f2f5fa;
+  --color-ink-700: #e9edf5;
+  --color-ink-600: #dde3ee;
+  --color-ink-500: #c9d2e3;
+
+  /* ---- Text (the former "mist" scale, now navy/slate) ---- */
+  --color-mist-50: #0b1b3a;
+  --color-mist-100: #14264c;
+  --color-mist-200: #1f3a6e;
+  --color-mist-300: #44557c;
+  --color-mist-400: #5b6c92;
+  --color-mist-500: #7386ac;
+  --color-mist-600: #90a0bd;
+  --color-mist-700: #b6c2d8;
+
+  /* ---- Primary brand blue (the former teal "signal") ---- */
+  --color-signal-100: #e8f1fe;
+  --color-signal-200: #cbe1fd;
+  --color-signal-300: #96c1f9;
+  --color-signal-400: #2f6fdb;
+  --color-signal-500: #1d5bc2;
+  --color-signal-600: #174aa3;
+  --color-signal-700: #143d86;
+  --color-signal-800: #12326c;
+  --color-signal-900: #0f2757;
+
+  /* ---- Navy — headings, footer, hero anchor ---- */
+  --color-navy-50: #f0f4fb;
+  --color-navy-100: #dbe4f4;
+  --color-navy-200: #b7c8e6;
+  --color-navy-300: #8aa5d2;
+  --color-navy-400: #5a7cba;
+  --color-navy-500: #2c4a86;
+  --color-navy-600: #1e3a6e;
+  --color-navy-700: #16305b;
+  --color-navy-800: #102444;
+  --color-navy-900: #0b1b3a;
+
+  /* ---- Secondary indigo (was "iris") ---- */
+  --color-iris-100: #eef0ff;
+  --color-iris-200: #d9dcff;
+  --color-iris-300: #b4b9fb;
+  --color-iris-400: #7d84f2;
+  --color-iris-500: #5a61e0;
+  --color-iris-600: #454bc2;
+  --color-iris-700: #343a96;
+  --color-iris-800: #262a6b;
+  --color-iris-900: #1a1d47;
+
+  /* ---- Accents used sparingly, always with meaning ---- */
+  --color-amber-glow: #d97706;
+  --color-rose-alert: #dc2626;
+  --color-violet-deep: #7c3aed;
+
+  /* ---- Typography ---- */
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* ---- Depth ---- */
+  --radius-panel: 1.25rem;
+
+  /* ---- Shadows: quiet, diffuse, business-card quality ---- */
+  --shadow-card: 0 1px 2px rgba(15, 39, 87, 0.05), 0 8px 24px -12px rgba(15, 39, 87, 0.12);
+  --shadow-card-hover: 0 2px 4px rgba(15, 39, 87, 0.06), 0 18px 44px -16px rgba(15, 39, 87, 0.2);
+  --shadow-panel: 0 1px 3px rgba(15, 39, 87, 0.06), 0 24px 60px -24px rgba(15, 39, 87, 0.18);
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================= */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    min-width: 0;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: auto; /* Lenis owns scrolling; never fight it */
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-mist-300);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Lenis is active: it adds these classes itself, we just make sure they
+     don't break layout if it is disabled (reduced motion). */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy-900);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, high-contrast focus for every interactive element. */
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-signal-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-signal-400) 22%, transparent);
+    color: var(--color-navy-900);
+  }
+
+  /* The page is light; native form controls must follow. */
+  input,
+  textarea,
+  select {
+    color-scheme: light;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================================================
+   COMPONENT PRIMITIVES
+   ========================================================================= */
+
+/* Primary surface: white card with a quiet border and diffuse shadow. */
+@utility glass-panel {
+  background: #ffffff;
+  border: 1px solid var(--color-ink-600);
+  box-shadow: var(--shadow-card);
+}
+
+/* Quieter surface for nested elements. */
+@utility glass-quiet {
+  background: var(--color-ink-850);
+  border: 1px solid var(--color-ink-600);
+}
+
+/* Soft grey section band — the alternating rhythm Vistaprint uses. */
+@utility section-tint {
+  background: linear-gradient(180deg, var(--color-ink-900), var(--color-ink-850));
+}
+
+@utility hairline {
+  border-color: var(--color-ink-600);
+}
+
+@utility text-signal-gradient {
+  background: linear-gradient(100deg, var(--color-navy-700) 0%, var(--color-signal-500) 60%, var(--color-signal-400) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-mist-gradient {
+  background: linear-gradient(180deg, var(--color-navy-900) 30%, var(--color-navy-600) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Eyebrow / technical label type */
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-signal-500);
+}
+
+/* Faint blueprint grid used sparingly behind light sections */
+@utility grid-veil {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--color-navy-500) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-navy-500) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 72px 72px;
+}
+
+/* ============================================================================
+   MOTION UTILITIES
+   ========================================================================= */
+
+@keyframes drift-y {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(210%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.anim-drift {
+  animation: drift-y 7s var(--ease-out-expo) infinite;
+}
+.anim-sweep {
+  animation: sweep 2.6s var(--ease-in-out-quint) infinite;
+}
+.anim-marquee {
+  animation: marquee 46s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-drift,
+  .anim-sweep,
+  .anim-marquee {
+    animation: none !important;
+  }
+}
+
+/* ============================================================================
+   PRINT
+   The resume page doubles as the downloadable document, so printing has to
+   produce a clean sheet. The page is already light; printing normalises the
+   remaining screen-only styling.
+   ========================================================================= */
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-sheet {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .resume-sheet,
+  .resume-sheet * {
+    background: transparent !important;
+    color: #111111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #d4d4d8 !important;
+    -webkit-text-fill-color: #111111 !important;
+  }
+
+  .resume-sheet h1,
+  .resume-sheet h2,
+  .resume-sheet h3 {
+    color: #000000 !important;
+  }
+
+  /* Keep authored sections and their items off page boundaries. */
+  .resume-sheet section,
+  .resume-sheet li,
+  .resume-sheet p {
+    break-inside: avoid;
+  }
+}
+
+/* ============================================================================
+   SCROLLBARS
+   ========================================================================= */
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink-850);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--color-navy-400) 45%, var(--color-ink-600));
+    border-radius: 999px;
+    border: 2px solid var(--color-ink-850);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--color-signal-500) 60%, var(--color-ink-600));
+  }
+}

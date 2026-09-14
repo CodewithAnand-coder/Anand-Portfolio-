@@ -1,0 +1,470 @@
+{
+  "report": {
+    "url": "http://localhost:3111",
+    "desktop": {
+      "glInfo": {
+        "canvas": true,
+        "backingSize": [
+          1440,
+          900
+        ],
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "isWebGL2": true
+      },
+      "ready": true,
+      "preloaderGone": false,
+      "stations": [
+        {
+          "requested": "home",
+          "active": "home",
+          "depth": 0,
+          "declaredZ": 0,
+          "visible": 1,
+          "visibleNames": [
+            "station-home"
+          ],
+          "drawCalls": 55,
+          "triangles": 11599,
+          "programs": 9,
+          "textures": 9,
+          "fps": 2,
+          "pixels": {
+            "mean": 243.1,
+            "sd": 32.3,
+            "brightPct": 98.81
+          }
+        },
+        {
+          "requested": "about",
+          "active": "about",
+          "depth": -25.83,
+          "declaredZ": -26,
+          "visible": 2,
+          "visibleNames": [
+            "station-home",
+            "station-about"
+          ],
+          "drawCalls": 30,
+          "triangles": 4931,
+          "programs": 11,
+          "textures": 14,
+          "fps": 4,
+          "pixels": {
+            "mean": 248.4,
+            "sd": 20.8,
+            "brightPct": 99.88
+          }
+        },
+        {
+          "requested": "services",
+          "active": "services",
+          "depth": -49.88,
+          "declaredZ": -50,
+          "visible": 2,
+          "visibleNames": [
+            "station-about",
+            "station-experience"
+          ],
+          "drawCalls": 41,
+          "triangles": 8341,
+          "programs": 11,
+          "textures": 24,
+          "fps": 4,
+          "pixels": {
+            "mean": 247.5,
+            "sd": 18.2,
+            "brightPct": 99.97
+          }
+        },
+        {
+          "requested": "experience",
+          "active": "experience",
+          "depth": -73.82,
+          "declaredZ": -74,
+          "visible": 2,
+          "visibleNames": [
+            "station-experience",
+            "station-education"
+          ],
+          "drawCalls": 70,
+          "triangles": 26879,
+          "programs": 11,
+          "textures": 27,
+          "fps": 6,
+          "pixels": {
+            "mean": 249.2,
+            "sd": 17.2,
+            "brightPct": 99.98
+          }
+        },
+        {
+          "requested": "education",
+          "active": "education",
+          "depth": -95.84,
+          "declaredZ": -96,
+          "visible": 3,
+          "visibleNames": [
+            "station-experience",
+            "station-education",
+            "station-skills"
+          ],
+          "drawCalls": 102,
+          "triangles": 28871,
+          "programs": 12,
+          "textures": 39,
+          "fps": 6,
+          "pixels": {
+            "mean": 249.1,
+            "sd": 17.4,
+            "brightPct": 99.84
+          }
+        },
+        {
+          "requested": "skills",
+          "active": "skills",
+          "depth": -121.81,
+          "declaredZ": -122,
+          "visible": 2,
+          "visibleNames": [
+            "station-education",
+            "station-skills"
+          ],
+          "drawCalls": 69,
+          "triangles": 10325,
+          "programs": 12,
+          "textures": 39,
+          "fps": 6,
+          "pixels": {
+            "mean": 249.7,
+            "sd": 18.1,
+            "brightPct": 99.89
+          }
+        },
+        {
+          "requested": "project-0",
+          "active": "project-1",
+          "depth": -170,
+          "declaredZ": -148,
+          "visible": 1,
+          "visibleNames": [
+            "station-project-1"
+          ],
+          "drawCalls": 31,
+          "triangles": 9251,
+          "programs": 15,
+          "textures": 50,
+          "fps": 6,
+          "pixels": {
+            "mean": 245.6,
+            "sd": 29,
+            "brightPct": 99.1
+          }
+        },
+        {
+          "requested": "project-1",
+          "active": "project-1",
+          "depth": -170,
+          "declaredZ": -170,
+          "visible": 1,
+          "visibleNames": [
+            "station-project-1"
+          ],
+          "drawCalls": 31,
+          "triangles": 9251,
+          "programs": 15,
+          "textures": 50,
+          "fps": 6,
+          "pixels": {
+            "mean": 245.4,
+            "sd": 29.3,
+            "brightPct": 99.15
+          }
+        },
+        {
+          "requested": "project-2",
+          "active": "project-3",
+          "depth": -214.01,
+          "declaredZ": -192,
+          "visible": 1,
+          "visibleNames": [
+            "station-project-3"
+          ],
+          "drawCalls": 29,
+          "triangles": 115,
+          "programs": 15,
+          "textures": 63,
+          "fps": 7,
+          "pixels": {
+            "mean": 244.1,
+            "sd": 34.7,
+            "brightPct": 98.37
+          }
+        },
+        {
+          "requested": "project-3",
+          "active": "project-3",
+          "depth": -214.01,
+          "declaredZ": -214,
+          "visible": 1,
+          "visibleNames": [
+            "station-project-3"
+          ],
+          "drawCalls": 29,
+          "triangles": 115,
+          "programs": 15,
+          "textures": 63,
+          "fps": 7,
+          "pixels": {
+            "mean": 244.1,
+            "sd": 34.7,
+            "brightPct": 98.37
+          }
+        },
+        {
+          "requested": "project-4",
+          "active": "project-4",
+          "depth": -235.83,
+          "declaredZ": -236,
+          "visible": 2,
+          "visibleNames": [
+            "station-project-3",
+            "station-project-4"
+          ],
+          "drawCalls": 48,
+          "triangles": 6239,
+          "programs": 15,
+          "textures": 73,
+          "fps": 7,
+          "pixels": {
+            "mean": 247.5,
+            "sd": 29.2,
+            "brightPct": 98.83
+          }
+        },
+        {
+          "requested": "certificates",
+          "active": "certificates",
+          "depth": -261.81,
+          "declaredZ": -262,
+          "visible": 1,
+          "visibleNames": [
+            "station-certificates"
+          ],
+          "drawCalls": 47,
+          "triangles": 581,
+          "programs": 15,
+          "textures": 79,
+          "fps": 6,
+          "pixels": {
+            "mean": 247.3,
+            "sd": 19.8,
+            "brightPct": 99.84
+          }
+        },
+        {
+          "requested": "youtube",
+          "active": "youtube",
+          "depth": -287.81,
+          "declaredZ": -288,
+          "visible": 3,
+          "visibleNames": [
+            "station-certificates",
+            "station-youtube",
+            "station-contact"
+          ],
+          "drawCalls": 63,
+          "triangles": 17455,
+          "programs": 15,
+          "textures": 91,
+          "fps": 6,
+          "pixels": {
+            "mean": 246.9,
+            "sd": 26.9,
+            "brightPct": 99.74
+          }
+        },
+        {
+          "requested": "contact",
+          "active": "contact",
+          "depth": -313.82,
+          "declaredZ": -314,
+          "visible": 2,
+          "visibleNames": [
+            "station-youtube",
+            "station-contact"
+          ],
+          "drawCalls": 21,
+          "triangles": 12483,
+          "programs": 15,
+          "textures": 91,
+          "fps": 6,
+          "pixels": {
+            "mean": 246.7,
+            "sd": 23.5,
+            "brightPct": 99.79
+          }
+        }
+      ],
+      "peak": {
+        "drawCalls": 102,
+        "atStation": "education",
+        "triangles": 28871,
+        "geometries": 208,
+        "textures": 91,
+        "dpr": 1
+      },
+      "idleFrameMs": {
+        "median": 96.19999999925494,
+        "p95": 137.5,
+        "worst": 172.30000000074506
+      }
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "drawCalls": 50,
+      "triangles": 9827,
+      "visibleStations": 1,
+      "overflow": {
+        "scrollWidth": 390,
+        "clientWidth": 390
+      },
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    "reducedMotion": {
+      "canvas": 0,
+      "preloader": false,
+      "sections": 15,
+      "h1": "R N Anand",
+      "bodyHeight": 11810
+    },
+    "errors": {
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        "http://localhost:3111/profile.jpg :: net::ERR_ABORTED",
+        "http://localhost:3111/profile.jpeg :: net::ERR_ABORTED",
+        "http://localhost:3111/profile.png :: net::ERR_ABORTED",
+        "http://localhost:3111/profile.webp :: net::ERR_ABORTED"
+      ]
+    },
+    "warnings": {
+      "consoleWarnings": []
+    },
+    "canvasContribution": {
+      "withCanvas": {
+        "mean": 249.7,
+        "sd": 18.2,
+        "brightPct": 99.89
+      },
+      "withoutCanvas": {
+        "mean": 249.3,
+        "sd": 17.6,
+        "brightPct": 99.88
+      }
+    }
+  },
+  "findings": [
+    {
+      "level": "error",
+      "message": "Preloader curtain is still on screen after the world reported ready."
+    },
+    {
+      "level": "error",
+      "message": "Station \"services\" is not visible when centred (visible: station-about, station-experience)."
+    },
+    {
+      "level": "error",
+      "message": "Camera misaligned at \"project-0\": declared depth -148, camera at -170 (drift 22.00)."
+    },
+    {
+      "level": "error",
+      "message": "Active station mismatch: asked for \"project-0\", app reports \"project-1\"."
+    },
+    {
+      "level": "error",
+      "message": "Station \"project-0\" is not visible when centred (visible: station-project-1)."
+    },
+    {
+      "level": "error",
+      "message": "Camera misaligned at \"project-2\": declared depth -192, camera at -214.01 (drift 22.01)."
+    },
+    {
+      "level": "error",
+      "message": "Active station mismatch: asked for \"project-2\", app reports \"project-3\"."
+    },
+    {
+      "level": "error",
+      "message": "Station \"project-2\" is not visible when centred (visible: station-project-3)."
+    },
+    {
+      "level": "error",
+      "message": "Hiding the WebGL canvas barely changes the frame (mean delta 0.4, sd delta 0.6) — the 3D world is not visibly contributing."
+    },
+    {
+      "level": "error",
+      "message": "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Failed request: http://localhost:3111/profile.jpg :: net::ERR_ABORTED"
+    },
+    {
+      "level": "error",
+      "message": "Failed request: http://localhost:3111/profile.jpeg :: net::ERR_ABORTED"
+    },
+    {
+      "level": "error",
+      "message": "Failed request: http://localhost:3111/profile.png :: net::ERR_ABORTED"
+    },
+    {
+      "level": "error",
+      "message": "Failed request: http://localhost:3111/profile.webp :: net::ERR_ABORTED"
+    },
+    {
+      "level": "error",
+      "message": "Mobile error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Mobile error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Mobile error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Mobile error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "level": "error",
+      "message": "Reduced motion: expected 14 stations, found 15."
+    }
+  ]
+}
